@@ -1,0 +1,9 @@
+body {
+	font-family: sans-serif;
+}
+body * {
+	box-sizing: border-box;
+}
+ul li {
+	margin-bottom: 10px;
+}
