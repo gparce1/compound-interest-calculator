@@ -9,6 +9,7 @@ ul li {
 }
 .starting-bar,
 .contribution-bar,
+.return-bar,
 .final-bar {
 	height: 10px;
 }
@@ -17,6 +18,9 @@ ul li {
 }
 .contribution-bar {
 	background-color: gold;
+}
+.return-bar {
+	background-color: yellowgreen;
 }
 .final-bar {
 	background-color: green;
