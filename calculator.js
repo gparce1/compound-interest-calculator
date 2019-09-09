@@ -43,6 +43,22 @@ const displayResults = (amount, duration, totalContribution, totalReturn, finalB
 	finalVal[0].innerHTML = finalBalance;
 }
 
+// Get Ratio
+const getRatio = (value, max) => {
+    return 100 * (value/max);
+}
+
+// Render Visuals
+const renderVisuals = (amount, totalContribution, finalBalance) => {
+	const startingBar = document.querySelectorAll('.starting-bar');
+	const contributionBar = document.querySelectorAll('.contribution-bar');
+	const finalBar = document.querySelectorAll('.final-bar');
+
+	startingBar[0].style.width = getRatio(amount, finalBalance) + '%';
+	contributionBar[0].style.width = getRatio(totalContribution, finalBalance) + '%';
+	finalBar[0].style.width = getRatio(finalBalance, finalBalance) + '%';
+}
+
 // Calculate
 const calculate = () => {
 	let amount = amountEl[0].value;
@@ -65,7 +81,7 @@ const calculate = () => {
 		totalReturn = finalBalance - amount - totalContribution;
 	}
 
-
+	renderVisuals(amount, totalContribution, finalBalance);
 	displayResults(formatValue(amount, '$'), duration, formatValue(totalContribution, '$'), formatValue(totalReturn, '$'), formatValue(finalBalance, '$'));
 }
 

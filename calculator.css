@@ -7,3 +7,17 @@ body * {
 ul li {
 	margin-bottom: 10px;
 }
+.starting-bar,
+.contribution-bar,
+.final-bar {
+	height: 10px;
+}
+.starting-bar {
+	background-color: blue;
+}
+.contribution-bar {
+	background-color: gold;
+}
+.final-bar {
+	background-color: green;
+}
