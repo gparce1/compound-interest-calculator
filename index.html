@@ -12,48 +12,56 @@
 	<![endif]-->
 </head>
 <body>
-	<h1>Compound Interest Calculator</h1>
+	<main>
+		<h1>Compound Interest Calculator</h1>
 
-	<form>
-		<ul>
-			<li>
-				<label for="amount">Starting Amount($)*:</label>
-				<input type="number" name="amount" value="1000">
-			</li>
-			<li>
-				<label for="interest">Interest Rate(%)*:</label>
-				<input type="number" name="interest" value="2">
-			</li>
-			<li>
-				<label for="contribution">Annual Contribution($):</label>
-				<input type="number" name="contribution" value="0">
-			</li>
-			<li>
-				<label for="duration">Duration(Years)*:</label>
-				<input type="number" name="duration" value="10">
-			</li>
-		</ul>
-		<button type="button" onclick="calculate()">Submit</button>
-	</form>
-	<section>
-		<h2>Results</h2>
-		<p>
-			Starting amount: <strong class="starting-val">$1000</strong>
-			<div class="starting-bar"></div>
-		</p>
-		<p>
-			Contribution total: <strong class="contribution-val">$0.00</strong>
-			<div class="contribution-bar"></div>
-		</p>
-		<p>
-			Return total: <strong class="return-val">$0.00</strong>
-			<div class="return-bar"></div>
-		</p>
-		<p>
-			Final Amount in <strong class="duration-val">10</strong> years: <strong class="final-val">$1218.99</strong>
-			<div class="final-bar"></div>
-		</p>
-	</section>
+		<form class="inputs">
+			<ul class="input-list">
+				<li class="input-group">
+					<label class="input-label" for="amount">Starting Amount:</label>
+					<small class="input-subtext">How much money are you starting with?</small>
+					<input type="number" class="calculator-input" name="amount" value="1000">
+				</li>
+				<li class="input-group">
+					<label class="input-label" for="interest">Interest Rate:</label>
+					<small class="input-subtext">What is the interest rate?</small>
+					<input type="number" class="calculator-input" name="interest" value="2">
+				</li>
+				<li class="input-group">
+					<label class="input-label" for="contribution">Annual Contribution:</label>
+					<small class="input-subtext">How much do you plan to add each year?</small>
+					<input type="number" class="calculator-input" name="contribution" value="0">
+				</li>
+				<li class="input-group">
+					<label class="input-label" for="duration">Duration:</label>
+					<small class="input-subtext">How many years are you going to save?</small>
+					<input type="number" class="calculator-input" name="duration" value="10">
+				</li>
+			</ul>
+			<button type="button" class="submit-button" onclick="calculate()">Calculate</button>
+		</form>
+		<section class="results">
+			<div class="result-total">
+				<span class="result-label">Total after <strong class="duration-val">10</strong> years</span>
+				<strong class="final-val">$1218.99</strong>
+				<div class="final-bar"></div>
+			</div>
+			<div class="result-bar">
+				<div class="starting-bar"></div>
+				<div class="contribution-bar"></div>
+				<div class="return-bar"></div>
+			</div>
+			<div class="result-starting">
+				Starting Amount: <strong class="starting-val">$1000</strong>
+			</div>
+			<div class="result-contribution">
+				Annual Contribution Total: <strong class="contribution-val">$0.00</strong>
+			</div>
+			<div class="result-return">
+				Total Return: <strong class="return-val">$0.00</strong>
+			</div>
+		</section>
+	</main>
 	<script type="text/javascript" src="calculator.js"></script>
 </body>
 </html>

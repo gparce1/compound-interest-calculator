@@ -1,5 +1,7 @@
+/* General */
 body {
-	font-family: sans-serif;
+	font-family: Roboto, sans-serif;
+	background-color: #ededed;
 }
 body * {
 	box-sizing: border-box;
@@ -7,20 +9,81 @@ body * {
 ul li {
 	margin-bottom: 10px;
 }
+main {
+	margin: 60px 80px;
+}
+h1,
+h2,
+strong {
+	font-weight: normal;
+}
+
+/* Forms */
+.inputs {
+	float: left;
+	width: 50%;
+}
+.input-list {
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 50px;
+}
+.input-group {
+	margin-bottom: 30px;
+}
+.input-label,
+.input-subtext,
+.calculator-input {
+	display: block;
+}
+.input-label {
+	margin-bottom: 5px;
+}
+.input-subtext {
+	margin-bottom: 15px;
+	color: #888;
+}
+.calculator-input {
+	height: 45px;
+	width: 300px;
+	padding: 10px 20px;
+	font-size: 20px;
+}
+.submit-button {
+	height: 45px;
+	width: 300px;
+	border-radius: 6px;
+	background-color: #5d9cec;
+	font-size: 20px;
+	color: #fff;
+}
+
+/* Resuls */
+.results {
+	float: right;
+	width: 50%;
+}
+.result-label,
+.final-val {
+	display: block;
+}
+.final-val {
+	font-size: 40px;
+}
 .starting-bar,
 .contribution-bar,
 .return-bar,
 .final-bar {
-	height: 10px;
+	height: 60px;
 }
 .starting-bar {
-	background-color: blue;
+	background-color: #354458;
 }
 .contribution-bar {
-	background-color: gold;
+	background-color: #ffbd52;
 }
 .return-bar {
-	background-color: yellowgreen;
+	background-color: #8cc152;
 }
 .final-bar {
 	background-color: green;
