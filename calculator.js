@@ -60,7 +60,7 @@ const renderVisuals = (amount, totalContribution, totalReturn, finalBalance) => 
 	startingBar[0].style.width = getRatio(amount, finalBalance) + '%';
 	contributionBar[0].style.width = getRatio(totalContribution, finalBalance) + '%';
 	returnBar[0].style.width = getRatio(totalReturn, finalBalance) + '%';
-	finalBar[0].style.width = getRatio(finalBalance, finalBalance) + '%';
+	// finalBar[0].style.width = getRatio(finalBalance, finalBalance) + '%';
 }
 
 // Calculate

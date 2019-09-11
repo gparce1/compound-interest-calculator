@@ -41,24 +41,30 @@
 			<button type="button" class="submit-button" onclick="calculate()">Calculate</button>
 		</form>
 		<section class="results">
-			<div class="result-total">
+			<div class="result-data-group result-total">
 				<span class="result-label">Total after <strong class="duration-val">10</strong> years</span>
-				<strong class="final-val">$1218.99</strong>
-				<div class="final-bar"></div>
+				<strong class="result-val final-val">$1218.99</strong>
 			</div>
-			<div class="result-bar">
-				<div class="starting-bar"></div>
-				<div class="contribution-bar"></div>
-				<div class="return-bar"></div>
+			<div class="result-bar-chart">
+				<!-- <div class="final-bar"></div> -->
+				<div class="result-bar starting-bar"></div>
+				<div class="result-bar contribution-bar"></div>
+				<div class="result-bar return-bar"></div>
 			</div>
-			<div class="result-starting">
-				Starting Amount: <strong class="starting-val">$1000</strong>
+			<div class="result-data-group result-starting">
+				<span class="result-legend"></span>
+				<span class="result-label">Starting Amount:</span>
+				<strong class="result-val starting-val">$1000</strong>
 			</div>
-			<div class="result-contribution">
-				Annual Contribution Total: <strong class="contribution-val">$0.00</strong>
+			<div class="result-data-group result-contribution">
+				<span class="result-legend"></span>
+				<span class="result-label">Annual Contribution Total:</span>
+				<strong class="result-val contribution-val">$0.00</strong>
 			</div>
-			<div class="result-return">
-				Total Return: <strong class="return-val">$0.00</strong>
+			<div class="result-data-group result-return">
+				<span class="result-legend"></span>
+				<span class="result-label">Total Return:</span>
+				<strong class="result-val return-val">$0.00</strong>
 			</div>
 		</section>
 	</main>

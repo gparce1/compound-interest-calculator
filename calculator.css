@@ -2,6 +2,7 @@
 body {
 	font-family: Roboto, sans-serif;
 	background-color: #ededed;
+	color: #333;
 }
 body * {
 	box-sizing: border-box;
@@ -16,6 +17,9 @@ h1,
 h2,
 strong {
 	font-weight: normal;
+}
+input {
+	font-family: inherit;
 }
 
 /* Forms */
@@ -47,6 +51,8 @@ strong {
 	height: 45px;
 	width: 300px;
 	padding: 10px 20px;
+	border-radius: 4px;
+	border: none;
 	font-size: 20px;
 }
 .submit-button {
@@ -58,16 +64,52 @@ strong {
 	color: #fff;
 }
 
-/* Resuls */
+/* Results */
 .results {
 	float: right;
 	width: 50%;
+}
+.result-bar-chart {
+	display: flex;
+	margin-bottom: 40px;
+	box-shadow: 0 2px 5px #ccc;
+}
+.result-bar {
+	transition: width 0.8s ease;
+}
+.result-data-group {
+	position: relative;
+	margin-bottom: 30px;
+	padding-left: 50px;
+}
+.result-data-group.result-total {
+	padding-left: 0;
 }
 .result-label,
 .final-val {
 	display: block;
 }
-.final-val {
+.result-legend {
+	position: absolute;
+	top: 25px;
+	left: 0;
+	display: block;
+	height: 26px;
+	width: 26px;
+	border-radius: 50%;
+	background-color: #ddd;
+}
+.result-label {
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+.result-val {
+	font-size: 24px;
+}
+.result-total .result-label {
+	font-size: 16px;
+}
+.result-total .result-val {
 	font-size: 40px;
 }
 .starting-bar,
@@ -76,12 +118,15 @@ strong {
 .final-bar {
 	height: 60px;
 }
+.result-starting .result-legend,
 .starting-bar {
 	background-color: #354458;
 }
+.result-contribution .result-legend,
 .contribution-bar {
 	background-color: #ffbd52;
 }
+.result-return .result-legend,
 .return-bar {
 	background-color: #8cc152;
 }
