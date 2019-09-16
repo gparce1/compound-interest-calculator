@@ -25,3 +25,7 @@ ul li {
 .final-bar {
 	background-color: green;
 }
+.pie-chart {
+	height: 500px;
+	width: 500px;
+}
