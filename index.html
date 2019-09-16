@@ -33,7 +33,8 @@
 				<input type="number" name="duration" value="10">
 			</li>
 		</ul>
-		<button type="button" onclick="calculate()">Submit</button>
+		<button type="button" onclick="calculate()">Calculate</button>
+		<button type="button" onclick="calculateGrowth()">Calculate Growth</button>
 	</form>
 	<section>
 		<h2>Results</h2>
@@ -55,7 +56,12 @@
 		</p>
 	</section>
 	<section class="pie-chart">
+		<h2>Pie Chart</h2>
 		<canvas id="piechart"></canvas>
+	</section>
+	<section class="line-chart">
+		<h2>Line Chart</h2>
+		<canvas id="linechart"></canvas>
 	</section>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 	<script type="text/javascript" src="calculator.js"></script>
