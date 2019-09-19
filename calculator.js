@@ -130,6 +130,65 @@ const updateLineChart = (time, growth) => {
 Render Visuals
 *******************************************************************************/
 
+var barCanvas = document.getElementById('barchart').getContext('2d');
+var barChart = new Chart(barCanvas, {
+	type: 'bar',
+	data: {
+		labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+		datasets: [{
+			data: [86,114,106,106,107,111,133,221,783,2478],
+			label: "First Deposit",
+			backgroundColor: "#40845B",
+			fill: false,
+		},{
+			data: [86,114,106,106,107,111,133,221,783,2478],
+			label: "Total Contributions",
+			backgroundColor: "#4C6CD3",
+			fill: false,
+		},{
+			data: [86,114,106,106,107,111,133,221,783,2478],
+			label: "Interest Earned",
+			backgroundColor: "#B2AB2D",
+			fill: false,
+		}]
+	},
+	options: {
+		scales: {
+          yAxes: [{
+          	stacked: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'Final Balance',
+                fontStyle: "bold",
+                fontColor: 'black',
+            }
+          }],
+          xAxes: [{
+          	stacked: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'Number of Investment Years',
+                fontStyle: "bold",
+                fontColor: 'black',
+            }
+          }],
+        }
+	}
+});
+
+const updateBarChart = (time, initalAmount, growthContribution, growthInterest) => {
+	barChart.data.datasets[0].data = initalAmount;
+	barChart.data.datasets[1].data = growthContribution;
+	barChart.data.datasets[2].data = growthInterest;
+	barChart.data.labels = time;
+	barChart.update();
+}
+
+
+/*******************************************************************************
+Render Visuals
+*******************************************************************************/
+
 const renderVisuals = (amount, totalContribution, totalReturn, finalBalance) => {
 	const startingBar = document.querySelectorAll('.starting-bar');
 	const contributionBar = document.querySelectorAll('.contribution-bar');
@@ -183,21 +242,31 @@ Calculate Growth
 
 const calculateGrowth = () => {
 	let amount = Number(amountEl[0].value);
+	let initAmount = amount;
 	let contribution = Number(contributionEl[0].value);
 	let duration = Number(durationEl[0].value);
 	let interest = Number(interestEl[0].value);
 	let rate = (interest/100) + 1;
-	let growth = [];
+	let initialAmount = [];
+	let growthAmount = [];
+	let growthInterest = [];
+	let growthContribution = [];
 	let years = [];
 
 	for(var i = 1; i <= duration; i++) {
-        amount = amount * rate + contribution;
+        initAmount = initAmount * rate + contribution;
 
+        // years.push(i);
+        // growth.push(amount);
         years.push(i);
-        growth.push(amount);
+        initialAmount.push(formatValue(amount));
+        growthAmount.push(formatValue(initAmount));
+        growthInterest.push(formatValue(initAmount - amount - contribution * i));
+        growthContribution.push(formatValue(contribution * i));
     }
 
-    updateLineChart(years, growth);
+    updateLineChart(years, growthAmount);
+    updateBarChart(years, initialAmount, growthContribution, growthInterest)
 }
 
 calculateGrowth();
