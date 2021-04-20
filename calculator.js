@@ -64,7 +64,7 @@ const renderVisuals = (amount, totalContribution, totalReturn, finalBalance) => 
 }
 
 // Calculate
-const calculate = () => {
+const calculate = (event) => {
 	let amount = amountEl[0].value;
 	let contribution = contributionEl[0].value;
 	let duration = durationEl[0].value;
@@ -73,6 +73,10 @@ const calculate = () => {
 	let finalBalance;
 	let totalContribution;
 	let totalReturn;
+
+	if (event) {
+		event.preventDefault();
+	}
 
 	// const
 	if (rate) {
